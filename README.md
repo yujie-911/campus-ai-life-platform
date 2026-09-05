@@ -104,15 +104,3 @@ authentication: <JWT>
 ```
 
 SSE 会发送 `conversation`、`message`、`done` 或 `error` 事件。其他入口：`GET /user/ai/conversations`、`GET /user/ai/conversations/{id}/messages`、`POST /admin/ai/knowledge/init`。Swagger UI：`/swagger-ui.html`。
-
-## 面试亮点
-
-1. 用业务 Service 包装模型工具：AI 能用真实数据，但没有任意 SQL 和越权查询能力。
-2. 双层记忆：ChatMemory 控制 Prompt 窗口，MySQL 提供长期历史、归属校验和审计。
-3. 业务一致性与 AI 安全并重：订单后端重算且事务落库；Agent 同时具有白名单、重试、步数、SSRF 和文件边界。
-
-更具体的代码级回答见 `docs/interview-guide.md`。
-
-## 参考与许可
-
-业务结构参考 `Sonder-MX/sky-take-out`，AI 设计参考 `liyupi/yu-ai-agent`。二者的迁移取舍记录在架构分析中；使用和分发前请同时核对上游仓库的许可证与素材授权。
